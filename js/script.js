@@ -23,18 +23,14 @@ const personalMovieDB = {
 console.log(personalMovieDB);
 
 for (let i = 0; i < 2; i++) {
-  const a, b;
   const a = prompt('Один из последних просмотренных фильмов?', '');
-  if (a == '') {
-    alert('Ответте на вопрос !!!');
-    prompt('Один из последних просмотренных фильмов?', '');
-  } else {
-    const b = prompt('На сколько оцнили его?', '');
-  }
-  if (b == '') {
-    alert('Ответте на вторй вопрос !!!');
-    prompt('Один из последних просмотренных фильмов?', '');
-  } else {
+  const b = prompt('На сколько оцнили его?', '');
+
+  if (a != null && b != null && a != '' && b != '' && a.length < 50) {
     personalMovieDB.movies[a] = b;
+    console.log('done');
+  } else {
+    console.log('error');
+    i--;
   }
 }
