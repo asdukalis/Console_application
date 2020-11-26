@@ -60,11 +60,9 @@ function showMyDB(hidden) {
 showMyDB(personalMovieDB.privat);
 
 function writeYourGeners() {
-  const genres = [];
   for (let i = 0; i < 3; i++) {
-    genres[i] = prompt(`Ваш любимый жанр под номером ${i + 1}`);
+    personalMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером ${i + 1}`);
   }
-  console.log(genres);
 }
 
 writeYourGeners();
