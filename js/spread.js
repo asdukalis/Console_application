@@ -1,95 +1,95 @@
-'use stict';
+// 'use stict';
 
-// let a = 5,
-//   b = a;
+// // let a = 5,
+// //   b = a;
 
-// b += 5;
+// // b += 5;
 
-// console.log(b);
-// console.log(a);
+// // console.log(b);
+// // console.log(a);
 
-// const obj = {
-//   a: 5,
-//   b: 1,
+// // const obj = {
+// //   a: 5,
+// //   b: 1,
+// // };
+
+// // const copy = obj; //Ссылка
+
+// // copy.a = 10;
+
+// // console.log(copy);
+// // console.log(obj);
+
+// function copy(mainObj) {
+//   let objCopy = {};
+
+//   for (let key in mainObj) {
+//     objCopy[key] = mainObj[key];
+//   }
+//   return objCopy;
+// }
+
+// const numbers = {
+//   a: 2,
+//   b: 5,
+//   c: {
+//     x: 7,
+//     y: 4,
+//   },
 // };
 
-// const copy = obj; //Ссылка
+// const newNumbers = copy(numbers);
 
-// copy.a = 10;
+// newNumbers.a = 10;
+// newNumbers.c.x = 10;
 
-// console.log(copy);
-// console.log(obj);
+// // console.log(newNumbers);
+// // console.log(numbers);
 
-function copy(mainObj) {
-  let objCopy = {};
+// const add = {
+//   d: 17,
+//   e: 20,
+// };
 
-  for (let key in mainObj) {
-    objCopy[key] = mainObj[key];
-  }
-  return objCopy;
-}
+// const clone = Object.assign({}, add);
 
-const numbers = {
-  a: 2,
-  b: 5,
-  c: {
-    x: 7,
-    y: 4,
-  },
-};
+// clone.d = 20;
 
-const newNumbers = copy(numbers);
+// // console.log(add);
+// // console.log(clone);
 
-newNumbers.a = 10;
-newNumbers.c.x = 10;
+// const oldArray = ['a', 'b', 'c'];
+// const newArray = oldArray.slice();
 
-// console.log(newNumbers);
-// console.log(numbers);
+// newArray[1] = 'asdfsadfsdf';
+// console.log(newArray);
+// console.log(oldArray);
 
-const add = {
-  d: 17,
-  e: 20,
-};
+// const video = ['youtube', 'vimeo', 'rutube'],
+//   blogs = ['wordpress', 'livejournal', 'blogger'],
+//   internet = [...video, ...blogs, 'vk', 'facebook'];
 
-const clone = Object.assign({}, add);
+// console.log(internet);
 
-clone.d = 20;
+// function log(a, b, c) {
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+// }
 
-// console.log(add);
-// console.log(clone);
+// const num = [2, 5, 7];
 
-const oldArray = ['a', 'b', 'c'];
-const newArray = oldArray.slice();
+// log(...num);
 
-newArray[1] = 'asdfsadfsdf';
-console.log(newArray);
-console.log(oldArray);
+// const array = ['a', 'b', 'c'];
 
-const video = ['youtube', 'vimeo', 'rutube'],
-  blogs = ['wordpress', 'livejournal', 'blogger'],
-  internet = [...video, ...blogs, 'vk', 'facebook'];
+// const newAarray = [...array];
 
-console.log(internet);
+// const q = {
+//   one: 1,
+//   two: 2,
+// };
 
-function log(a, b, c) {
-  console.log(a);
-  console.log(b);
-  console.log(c);
-}
+// const newObj = { ...q };
 
-const num = [2, 5, 7];
-
-log(...num);
-
-const array = ['a', 'b', 'c'];
-
-const newAarray = [...array];
-
-const q = {
-  one: 1,
-  two: 2,
-};
-
-const newObj = { ...q };
-
-console.log(newObj);
+// console.log(newObj);
