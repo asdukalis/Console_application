@@ -29,3 +29,26 @@
 
 // const test = '12px';
 // console.log(parseInt(test));
+
+function first() {
+  // Do something
+  setTimeout(function () {
+    console.log(1);
+  }, 500);
+}
+
+function second() {
+  console.log(2);
+}
+
+first();
+second();
+
+function learnJS(lang, callback) {
+  console.log(`я учу: ${lang}`);
+  callback();
+}
+
+learnJS('JavaScript', function () {
+  console.log('Я прошел этот урок!');
+});
