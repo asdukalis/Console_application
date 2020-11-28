@@ -34,9 +34,7 @@ const personalMovieDB = {
 
       if (a != null && b != null && a != '' && b != '' && a.length < 50) {
         personalMovieDB.movies[a] = b;
-        console.log('done');
       } else {
-        console.log('error');
         i--;
       }
     }
@@ -49,32 +47,47 @@ const personalMovieDB = {
   toggleVisibleMyDB: function (hidden) {
     if (hidden) {
       personalMovieDB.privat = !personalMovieDB.privat;
-      personalMovieDB.showMyDB(personalMovieDB.privat);
     } else {
       personalMovieDB.privat = !personalMovieDB.privat;
-      personalMovieDB.showMyDB(personalMovieDB.privat);
     }
+    personalMovieDB.showMyDB(personalMovieDB.privat);
   },
   writeYourGeners: function () {
-    for (let i = 0; i < 3; i++) {
-      personalMovieDB.genres[i] = prompt(
-        `Ваш любимый жанр под номером ${i + 1}`
-      );
-      if (
-        personalMovieDB.genres[i] === '' ||
-        personalMovieDB.genres[i] === null
-      ) {
+    for (let i = 0; i < 1; i++) {
+      let geners = prompt(
+        `Введите Ваши любимые жанры через запятую`
+      ).toLowerCase();
+
+      if (geners === '' || geners === null) {
         i--;
+      } else {
+        personalMovieDB.genres = geners.split(', ');
+        personalMovieDB.genres.sort();
       }
     }
-    console.log(
-      personalMovieDB.genres.forEach(function (i, index) {
-        console.log(
-          `Любимый жанр # ${index + 1} - это ${personalMovieDB.genres[index]}`
-        );
-      })
-    );
+    // Комедии, Боевики, Фэнтези, Приключения, Ужасы
+    personalMovieDB.genres.forEach((item, index) => {
+      console.log(`Любимый жанр ${index + 1} - это ${item}`);
+    });
   },
+  // writeYourGeners_2: function () {
+  //   for (let i = 0; i < 3; i++) {
+  //     let gener = prompt(`Ваш любимый жанр под номером ${i + 1}`);
+
+  //     if (
+  //       personalMovieDB.genres[i] === '' ||
+  //       personalMovieDB.genres[i] === null
+  //     ) {
+  //       i--;
+  //     } else {
+  //       personalMovieDB.genres[i] = gener;
+  //     }
+  //   }
+
+  //   personalMovieDB.genres.forEach((item, index) => {
+  //     console.log(`Любимый жанр ${index + 1} - это ${item}`);
+  //   });
+  // },
 };
 
 personalMovieDB.start();
