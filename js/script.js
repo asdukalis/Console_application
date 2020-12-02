@@ -1,71 +1,100 @@
-// 'use strict';
+'use strict';
 
-// let numberOfFilms;
+// const box = document.getElementById('box'),
+//   btns = document.getElementsByTagName('button'),
+//   circles = document.getElementsByClassName('circle'),
+//   wrapper = document.querySelector('.wrapper'),
+//   hearts = document.querySelectorAll('.heart'),
+//   oneHeart = document.querySelector('.heart');
 
-// function start() {
-//   numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// hearts.forEach((item) => {
+//   console.log(item);
+// });
 
-//   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-//   }
+// box.style.backgroundColor = 'green';
+// box.style.width = '500px';
+
+// box.style.cssText = `background-color: blue; width: 500px;`;
+
+// btns[1].style.borderRadius = '100%';
+// btns[1].style.backgroundColor = 'pink';
+
+// circles[1].style.backgroundColor = 'red';
+
+// for (let i = 0; i < hearts.length; i++) {
+//   hearts[i].style.backgroundColor = 'lightgreen';
 // }
 
-// // start();
+// hearts.forEach((item) => {
+//   item.style.backgroundColor = 'orange';
+// });
 
-// const personalMovieDB = {
-//   count: numberOfFilms,
-//   movies: {},
-//   actors: {},
-//   genres: [],
-//   privat: false,
+// const div = document.createElement('div');
+// const text = document.createTextNode('I was hear');
+
+// div.classList.add('black');
+
+// wrapper.append(div);
+// wrapper.prepend(div);
+
+// hearts[1].before(div);
+// hearts[2].after(div);
+
+// circles[0].remove();
+
+// hearts[0].replaceWith(circles[0]);
+
+// div.innerHTML = '<h1>Hello World!</h1>';
+// div.textContent = '<h1>Hello World!</h1>';
+
+// div.insertAdjacentHTML('beforebegin', '<h2>Good</h2>');
+// div.insertAdjacentHTML('afterend', '<h2>Good</h2>');
+// div.innerHTML = '<h1>Hello World!</h1>';
+// div.insertAdjacentHTML('beforeend', '<h2>Good</h2>');
+// div.insertAdjacentHTML('afterbegin', '<h2>Good</h2>');
+
+// События и оброботчики
+
+// const btn = document.querySelector('button');
+
+// btn.onclick = function () {
+
+//   alert('Click');
 // };
 
-// function rememberMyFilms() {
-//   for (let i = 0; i < 2; i++) {
-//     const a = prompt('Один из последних просмотренных фильмов?', '');
-//     const b = prompt('На сколько оцнили его?', '');
+// btn.addEventListener('click', () => {
+//   alert('Click');
+// });
 
-//     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-//       personalMovieDB.movies[a] = b;
-//       console.log('done');
-//     } else {
-//       console.log('error');
-//       i--;
-//     }
-//   }
-// }
+// btn.addEventListener('click', (e) => {
+// e.preventDefault();
+//   // console.log('Hover');
+//   // console.log(e.target);
+//   e.target.remove();
+// });
 
-// // rememberMyFilms();
+// console.log(document.body);
+// console.log(document.head);
+// console.log(document.documentElement);
+// console.log(document.body.childNodes);
+// console.log(document.body.firstChild);
+// console.log(document.body.lastChild);
 
-// function detectPersonalLevel() {
-//   if (personalMovieDB.count < 10) {
-//     alert('Просмотрено довольно мало фильмов');
-//   } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-//     alert('Вы калссический зритель');
-//   } else if (personalMovieDB.count >= 30) {
-//     alert('Вы киноман');
-//   } else {
-//     alert('Произошла ошибка');
-//   }
-// }
+// console.log(document.querySelector('#current').parentNode.parentNode);
 
-// // detectPersonalLevel();
+// console.log(document.querySelector('[data-current="3"]').nextSibling);
+// console.log(document.querySelector('[data-current="3"]').previousSibling);
 
-// function showMyDB(hidden) {
-//   if (!hidden) {
-//     console.log(personalMovieDB);
-//   }
-// }
+// console.log(document.body.firstElementChild);
+// console.log(
+//   document.querySelector('[data-current="3"]').previousElementSibling
+// );
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling);
+// console.log(document.body.lastElementChild);
 
-// // showMyDB(personalMovieDB.privat);
-
-// function writeYourGeners() {
-//   for (let i = 0; i < 3; i++) {
-//     personalMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером ${i + 1}`);
-//   }
-// }
-
-// // writeYourGeners();
-// function toggleVisibleMyDB {
-
-// }
+for (let node of document.body.childNodes) {
+  if (node.nodeName == '#text') {
+    continue;
+  }
+  console.log(node);
+}
